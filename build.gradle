@@ -1,0 +1,38 @@
+group 'com.firstfewlines'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+//apply plugin: 'application'
+
+sourceCompatibility = 1.8
+
+//mainClassName = 'com.firstfewlines.SeleniumSample'
+
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile group: 'org.testng', name: 'testng', version: '6.14.3'
+    compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.141.59'
+
+    compile('org.seleniumhq.selenium:selenium-java:3.4.0') {
+        exclude group: 'commons-codec', module: 'commons-codec'
+        exclude group: 'cglib', module: 'cglib-nodep'
+    }
+}
+
+test { //this is the gradle task to be executed
+  useTestNG() { //Tells Gradle to use TestNG
+       useDefaultListeners = true // Tells TestNG to execute its default reporting structure
+       //suiteXmlFiles << new File("testng.xml")
+       suites 'testng.xml' 
+       
+    }         
+      //set TestNG output dir
+      // outputDirectory = file("$projectDir/testngOutput")
+      testLogging {
+        events "PASSED", "FAILED", "SKIPPED" }
+    
+}
