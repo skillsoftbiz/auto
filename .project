@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>selenium-example</name>
-	<comment>Project java-selenium-web-automation-gradle-example created by Buildship.</comment>
+	<name>businessapp-auto</name>
+	<comment>Project business-application-automation created by Suruchi Sinha.</comment>
 	<projects>
 	</projects>
 	<buildSpec>
